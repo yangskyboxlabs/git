@@ -7,6 +7,14 @@
 #            2007 Trolltech ASA
 # License: MIT <http://www.opensource.org/licenses/mit-license.php>
 #
+# pylint: disable=invalid-name,missing-docstring,too-many-arguments,broad-except
+# pylint: disable=no-self-use,wrong-import-position,consider-iterating-dictionary
+# pylint: disable=wrong-import-order,unused-import,too-few-public-methods
+# pylint: disable=too-many-lines,ungrouped-imports,fixme,too-many-locals
+# pylint: disable=line-too-long,bad-whitespace,superfluous-parens
+# pylint: disable=too-many-statements,too-many-instance-attributes
+# pylint: disable=too-many-branches,too-many-nested-blocks
+#
 import sys
 if sys.version_info.major < 3 and sys.version_info.minor < 7:
     sys.stderr.write("git-p4: requires Python 2.7 or later.\n")
