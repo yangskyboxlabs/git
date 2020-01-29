@@ -3594,11 +3594,14 @@ class P4Sync(Command, P4UserMap):
             self.gitStream.write = make_encoded_write(self.gitStream.write)
 
     def closeStreams(self):
+        if self.gitStream is None:
+            return
         self.gitStream.close()
         if self.importProcess.wait() != 0:
             die("fast-import failed: %s" % self.gitError.read())
         self.gitOutput.close()
         self.gitError.close()
+        self.gitStream = None
 
     def run(self, args):
         if self.importIntoRemotes:
