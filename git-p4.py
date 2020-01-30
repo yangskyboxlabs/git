@@ -3599,7 +3599,8 @@ class P4Sync(Command, P4UserMap):
         changes = []
 
         if len(self.changesFile) > 0:
-            output = open(self.changesFile).readlines()
+            with open(self.changesFile) as f:
+                output = f.readlines()
             changeSet = set()
             for line in output:
                 changeSet.add(int(line))
